@@ -1,0 +1,46 @@
+body {
+    font-size: 16px;
+    position: relative !important;
+    height: 100% !important;
+    top: 0px !important;
+    background: #E5E5E5;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.small {
+    font-size: 12px; /* 75% of the baseline */
+}
+
+.large {
+    font-size: 20px; /* 125% of the baseline */
+}
+
+.x-large {
+    font-size: 24px; /* 125% of the baseline */
+}
+
+.xx-large {
+    font-size: 32px; /* 125% of the baseline */
+}
+
+.xxx-large {
+    font-size: 44px; /* 125% of the baseline */
+}
+
+#ui-view {
+    max-width: 1200px;
+    min-width: 600px;
+    padding: 90px 0;
+}
+
+/*Dashboard*/
+/*Plant*/
+.plant {
+    min-width: 300px;
+}
+.plant .card-media {
+    background-size: contain;
+}
