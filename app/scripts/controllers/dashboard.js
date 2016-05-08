@@ -5,6 +5,23 @@ app.controller('Dashboard', ['$rootScope', '$scope', '$firebaseObject', '$fireba
     var ref = new Firebase("https://raz-garden.firebaseio.com");
     $scope.plants = $firebaseArray(ref);
 
+    $scope.removePlant = function(plant, ev) {
+        var confirm = $mdDialog.confirm()
+            .title('Would you like to delete this plant?')
+            .textContent('This action CAN NOT be undone!')
+            .ariaLabel('Are you sure?')
+            .targetEvent(ev)
+            .ok('Yep!')
+            .cancel('Nooo!');
+        $mdDialog.show(confirm).then(function() {
+            $scope.plants.$remove(plant).then(function(ref) {
+                ref.key() === plant.$id; // true
+            });
+        }, function() {
+            return;
+        });
+    };
+
     $scope.showAdd = function (ev) {
         $mdDialog.show({
             controller: AddDialogController,

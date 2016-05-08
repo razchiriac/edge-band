@@ -44,3 +44,6 @@ body {
 .plant .card-media {
     background-size: contain;
 }
+.plant .actions {
+    height: 57px !important;
+}
