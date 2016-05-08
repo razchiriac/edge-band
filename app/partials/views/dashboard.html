@@ -18,18 +18,18 @@
             <h2>Dashboard</h2>
         </div>
         <div layout="row">
-            <md-button class="md-raised md-primary">Add a plant</md-button>
+            <md-button class="md-raised md-primary" ng-click="showAdd($event)">Add a plant</md-button>
         </div>
         <div layout="row">
 
             <md-card class="plant" ng-repeat="plant in plants">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">{{plant.Data.Title}}</span>
+                        <span class="md-headline">{{plant.Title}}</span>
                         <span class="md-subhead">{{plant.Type}}</span>
                     </md-card-title-text>
                     <md-card-title-media>
-                        <div class="md-media-lg card-media" style="background-image: url({{plant.Data.Image}})">
+                        <div class="md-media-lg card-media" style="background-image: url({{plant.Image}})">
                         </div>
                     </md-card-title-media>
                 </md-card-title>

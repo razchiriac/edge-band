@@ -1,0 +1,35 @@
+<md-dialog aria-label="List dialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Add a new plant</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="hide()">
+                <i class="fa fa-times white"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form novalidate>
+            <md-input-container>
+                <label>Title</label>
+                <input type="text" ng-model="newPlantTitle">
+            </md-input-container>
+            <md-input-container>
+                <label>Type</label>
+                <input type="text" ng-model="newPlantType">
+            </md-input-container>
+            <md-input-container>
+                <label>Edible</label>
+                <input type="text" ng-model="newPlantEdible">
+            </md-input-container>
+            <md-input-container>
+                <label>Height</label>
+                <input type="text" ng-model="newPlantHeight">
+            </md-input-container>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="addPlant()" class="md-primary">Add plant</md-button>
+        <md-button ng-click="hide()" class="md-primary">Close Dialog</md-button>
+    </md-dialog-actions>
+</md-dialog>
