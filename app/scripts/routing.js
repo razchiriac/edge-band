@@ -1,6 +1,6 @@
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     // For any unmatched url, redirect to /home
-    $urlRouterProvider.otherwise("/splash");
+    $urlRouterProvider.otherwise("/dashboard");
     // States setup
     $stateProvider
     // logged out states

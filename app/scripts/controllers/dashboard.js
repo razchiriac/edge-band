@@ -43,7 +43,8 @@ app.controller('Dashboard', ['$rootScope', '$scope', '$firebaseObject', '$fireba
                     Type: $scope.newPlantType,
                     Edible: $scope.newPlantEdible,
                     Title: $scope.newPlantTitle,
-                    Height: $scope.newPlantHeight
+                    Height: $scope.newPlantHeight,
+                    ImageUrl: '../../images/basil.png'
                 });
                 $scope.hide();
             };
