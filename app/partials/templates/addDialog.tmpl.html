@@ -4,29 +4,28 @@
             <h2>Add a new plant</h2>
             <span flex></span>
             <md-button class="md-icon-button" ng-click="hide()">
-                <i class="fa fa-times white"></i>
+                ok
             </md-button>
         </div>
     </md-toolbar>
-    <md-dialog-content>
-        <form novalidate>
+    <md-dialog-content layout-padding layout="row" layout-align="space-around center">
             <md-input-container>
-                <label>Title</label>
-                <input type="text" ng-model="newPlantTitle">
+                <label>Name</label>
+                <md-autocomplete
+                        md-selected-item="selectedItem"
+                        md-search-text="searchText"
+                        md-items="item in querySearch(searchText)"
+                        md-item-text="item.display"
+                        md-min-length="0"
+                        placeholder="Plant Name">
+                    <md-item-template>
+                        <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No states matching "{{searchText}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
             </md-input-container>
-            <md-input-container>
-                <label>Type</label>
-                <input type="text" ng-model="newPlantType">
-            </md-input-container>
-            <md-input-container>
-                <label>Edible</label>
-                <input type="text" ng-model="newPlantEdible">
-            </md-input-container>
-            <md-input-container>
-                <label>Height</label>
-                <input type="text" ng-model="newPlantHeight">
-            </md-input-container>
-        </form>
     </md-dialog-content>
     <md-dialog-actions>
         <md-button ng-click="addPlant()" class="md-primary">Add plant</md-button>

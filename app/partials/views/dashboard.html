@@ -22,36 +22,7 @@
         </div>
         <div layout="row">
 
-            <md-card class="plant" ng-repeat="plant in plants">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{plant.Title}}</span>
-                        <span class="md-subhead">{{plant.Type}}</span>
-                    </md-card-title-text>
-                    <md-card-title-media>
-                        <div class="md-media-lg card-media" style="background-image: url({{plant.Image}})">
-                        </div>
-                    </md-card-title-media>
-                </md-card-title>
-                <md-card-actions class="actions" layout="row" layout-align="end center">
-                    <md-button flex="40">Info</md-button>
-                    <md-fab-speed-dial flex="30" md-direction="up" class="md-scale">
-                        <md-fab-trigger>
-                            <md-button aria-label="menu" class="md-fab md-warn">
-                                <i class="fa fa-bars"></i>
-                            </md-button>
-                        </md-fab-trigger>
-                        <md-fab-actions>
-                            <md-button aria-label="Delete" class="md-fab md-raised md-mini" ng-click="removePlant(plant, $event)">
-                                <i class="fa fa-trash"></i>
-                            </md-button>
-                            <md-button aria-label="Options" class="md-fab md-raised md-mini">
-                                <i class="fa fa-ellipsis-v"></i>
-                            </md-button>
-                        </md-fab-actions>
-                    </md-fab-speed-dial>
-                </md-card-actions>
-            </md-card>
+            <div mg-plant ng-repeat="plant in plants" plantObj="plant"></div>
 
         </div>
 
