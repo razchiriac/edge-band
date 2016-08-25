@@ -1,13 +1,13 @@
 {
-  "name": "my-garden",
+  "name": "edge-band",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
+  "description": "A dashboard for the edge band machine",
   "license": "MIT",
   "main": "gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/razchiriac/my-garden.git"
+    "url": "https://github.com/razchiriac/edge-band.git"
   },
   "author": "Raz Chiriac",
   "dependencies": {

@@ -1,19 +1,11 @@
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     // For any unmatched url, redirect to /home
-    $urlRouterProvider.otherwise("/dashboard");
+    $urlRouterProvider.otherwise("/collections");
     // States setup
     $stateProvider
-    // logged out states
-        .state('home', {
-            url: "/",
-            templateUrl: "../partials/views/home.html"
-        })
-        // end of logged out states
-        // logged in states
-        .state('dashboard', {
-            url: "/dashboard",
-            templateUrl: "../partials/views/dashboard.html",
-            controller: "Dashboard"
+        .state('collections', {
+            url: "/collections",
+            templateUrl: "/partials/views/collections.html",
+            controller: "CollectionsCtrl"
         });
-    // end of logged in states
 }]);
