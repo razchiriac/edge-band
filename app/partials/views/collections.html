@@ -1,31 +1,28 @@
 <div class="wrapper" ng-init="init()">
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollModal">
-        New Collection
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="addCollModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add a new collection</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Name</span>
-                        <input type="text" class="form-control" placeholder="Name your collection" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add Collection</button>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h4>You have {{collections.length}} collection{{collections.length > 1 ? 's' : ''}}.</h4>
         </div>
     </div>
+
+    <div class="list-group">
+        <div class="list-group-item" ng-repeat="collection in collections">
+            <input type="text" ng-model="collection.name" ng-change="collections.$save(collection)" />
+            <button class="btn btn-primary" ui-sref="collections.detail({id: collection.$id})">Enter Collection</button>
+            <button class="btn btn-danger" ng-click="collections.$remove(collection)">Delete Collection</button>
+        </div>
+    </div>
+
+    <!-- push a new message onto the array -->
+    <form ng-submit="addCollection()">
+        <input ng-model="newCollectionName" />
+        <button class="btn btn-default" type="submit">Add Collection</button>
+    </form>
+
+    <hr>
+
+    <div ui-view="detail" ></div>
 
 
 </div>

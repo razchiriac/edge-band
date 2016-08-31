@@ -4,6 +4,7 @@ body {
     height: 100% !important;
     top: 0px !important;
     background: #E5E5E5;
+    padding: 20px;
 }
 
 *:focus {
@@ -33,17 +34,5 @@ body {
 #ui-view {
     max-width: 1200px;
     min-width: 600px;
-    padding: 90px 0;
-}
-
-/*Dashboard*/
-/*Plant*/
-.plant {
-    min-width: 300px;
-}
-.plant .card-media {
-    background-size: contain;
-}
-.plant .actions {
-    height: 57px !important;
+    padding: 90px;
 }

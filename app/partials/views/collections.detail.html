@@ -1,0 +1,35 @@
+
+<div class="page-header">
+    <h2>{{collection.name}}</h2>
+</div>
+<div class="row">
+    <h3>Bands:</h3>
+    <div class="list-group">
+        <div class="list-group-item" ng-repeat="band in collectionBands">
+            <input ng-model="band.name" ng-change="collectionBands.$save(band)" />
+            <input ng-model="band.knob1" ng-change="collectionBands.$save(band)" />
+            <input ng-model="band.knob2" ng-change="collectionBands.$save(band)" />
+            <input ng-model="band.knob3" ng-change="collectionBands.$save(band)" />
+            <button class="btn btn-danger" ng-click="collectionBands.$remove(band)">Delete Band</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="panel">
+        <form ng-submit="addBand()">
+            <label>Name:</label>
+            <input ng-model="newBandName" />
+
+            <label>Knob 1:</label>
+            <input type="text" ng-model="nbKnob1">
+            <label>Knob 2:</label>
+            <input type="text" ng-model="nbKnob2">
+            <label>Knob 3:</label>
+            <input type="text" ng-model="nbKnob3">
+
+            <button class="btn btn-default" type="submit">Add Band</button>
+        </form>
+    </div>
+</div>
