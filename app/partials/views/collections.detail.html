@@ -2,22 +2,30 @@
 <div class="page-header">
     <h2>{{collection.name}}</h2>
 </div>
-<div class="row">
+<div layout="column">
     <h3>Bands:</h3>
-    <div class="list-group">
-        <div class="list-group-item" ng-repeat="band in collectionBands">
-            <input ng-model="band.name" ng-change="collectionBands.$save(band)" />
-            <input ng-model="band.knob1" ng-change="collectionBands.$save(band)" />
-            <input ng-model="band.knob2" ng-change="collectionBands.$save(band)" />
-            <input ng-model="band.knob3" ng-change="collectionBands.$save(band)" />
-            <button class="btn btn-danger" ng-click="removeBand($event, band)">Delete Band</button>
-        </div>
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <md-card flex-gt-xs="33" ng-repeat="band in collectionBands">
+            <md-card-title>
+            </md-card-title>
+            <md-card-content>
+                <input ng-model="band.name" ng-change="collectionBands.$save(band)" />
+                <input ng-model="band.knob1" ng-change="collectionBands.$save(band)" />
+                <input ng-model="band.knob2" ng-change="collectionBands.$save(band)" />
+                <input ng-model="band.knob3" ng-change="collectionBands.$save(band)" />
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="removeBand($event, band)">Delete Band</md-button>
+            </md-card-actions>
+        </md-card>
     </div>
 
 </div>
 
-<div class="row">
-    <div class="panel">
+<div layout="row">
+    <div md-whiteframe="2" class="md-padding">
+        <h4>Add new band</h4>
+        <hr>
         <form ng-submit="addBand()">
             <label>Name:</label>
             <input ng-model="newBandName" />

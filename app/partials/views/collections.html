@@ -1,28 +1,38 @@
-<div class="wrapper" ng-init="init()">
+<md-content layout="column" class="md-padding" flex ng-init="init()">
 
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+    <div layout="row">
+        <div>
             <h4>You have {{collections.length}} collection{{collections.length > 1 ? 's' : ''}}.</h4>
         </div>
     </div>
 
-    <div class="list-group">
-        <div class="list-group-item" ng-repeat="collection in collections">
-            <input type="text" ng-model="collection.name" ng-change="collections.$save(collection)" />
-            <button class="btn btn-primary" ui-sref="collections.detail({id: collection.$id})">Enter Collection</button>
-            <button class="btn btn-danger" ng-click="removeCollection($event, collection)">Delete Collection</button>
-        </div>
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <md-card flex-gt-xs="33" ng-repeat="collection in collections">
+            <md-card-title>
+            </md-card-title>
+            <md-card-content>
+                <input type="text" ng-model="collection.name" ng-change="collections.$save(collection)" />
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ui-sref="collections.detail({id: collection.$id})">Enter Collection</md-button>
+                <md-button ng-click="removeCollection($event, collection)">Delete Collection</md-button>
+            </md-card-actions>
+        </md-card>
     </div>
 
     <!-- push a new message onto the array -->
-    <form ng-submit="addCollection()">
-        <input ng-model="newCollectionName" />
-        <button class="btn btn-default" type="submit">Add Collection</button>
-    </form>
+    <div md-whiteframe="2" class="md-padding">
+        <h4>Add new Collection</h4>
+        <hr>
+        <form ng-submit="addCollection()">
+            <input ng-model="newCollectionName" />
+            <button class="btn btn-default" type="submit">Add Collection</button>
+        </form>
+    </div>
 
     <hr>
 
-    <div ui-view="detail" ></div>
+    <div ui-view="detail" class="md-padding"></div>
 
 
-</div>
+</md-content>
