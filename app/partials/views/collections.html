@@ -10,7 +10,7 @@
         <div class="list-group-item" ng-repeat="collection in collections">
             <input type="text" ng-model="collection.name" ng-change="collections.$save(collection)" />
             <button class="btn btn-primary" ui-sref="collections.detail({id: collection.$id})">Enter Collection</button>
-            <button class="btn btn-danger" ng-click="collections.$remove(collection)">Delete Collection</button>
+            <button class="btn btn-danger" ng-click="removeCollection($event, collection)">Delete Collection</button>
         </div>
     </div>
 

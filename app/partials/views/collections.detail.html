@@ -10,7 +10,7 @@
             <input ng-model="band.knob1" ng-change="collectionBands.$save(band)" />
             <input ng-model="band.knob2" ng-change="collectionBands.$save(band)" />
             <input ng-model="band.knob3" ng-change="collectionBands.$save(band)" />
-            <button class="btn btn-danger" ng-click="collectionBands.$remove(band)">Delete Band</button>
+            <button class="btn btn-danger" ng-click="removeBand($event, band)">Delete Band</button>
         </div>
     </div>
 

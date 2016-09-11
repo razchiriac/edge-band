@@ -1,5 +1,5 @@
-app.controller('CollectionsDetailCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$stateParams',
-    function ($rootScope, $scope, $firebaseObject, $firebaseArray, $stateParams) {
+app.controller('CollectionsDetailCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$stateParams', '$mdDialog',
+    function ($rootScope, $scope, $firebaseObject, $firebaseArray, $stateParams, $mdDialog) {
 
         var ref = new Firebase("https://raz-edge-band.firebaseio.com");
 
@@ -14,7 +14,19 @@ app.controller('CollectionsDetailCtrl', ['$rootScope', '$scope', '$firebaseObjec
                 knob2: $scope.nbKnob2,
                 knob3: $scope.nbKnob3
             });
-
+        };
+        $scope.removeBand = function(event, band) {
+            var confirm = $mdDialog.confirm()
+                .title('Are you sure to delete the record?')
+                .textContent('Record will be deleted permanently.')
+                .targetEvent(event)
+                .ok('Yes')
+                .cancel('No');
+            $mdDialog.show(confirm).then(function() {
+                $scope.collectionBands.$remove(band);
+            }, function() {
+                $scope.status = 'You decided to keep your record.';
+            });
         };
 
     }]);
